@@ -7,13 +7,41 @@ class ContainerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ejemplo Imágenes"),
-        backgroundColor: Colors.lightBlue,
-        foregroundColor: Colors.white,
+        title:const Center(
+            child: Text(
+              "Travel App",
+              style: TextStyle(
+                  fontFamily: 'Signatra',
+                  fontSize: 40
+              ),
+            )
+        ),
+        backgroundColor: Colors.yellowAccent,
+        foregroundColor: Colors.black,
       ),
-      body: Column(
+      body: Stack(
         children: [
-          Image.asset('assets/img/travel.jpg', height: 300.0, width: double.infinity,)
+          Container(
+              child: Image.asset(
+                'assets/img/travel.jpg',
+                height: double.infinity,
+                width: double.infinity,
+                fit: BoxFit.cover
+              )
+          ),
+          Center(
+            child: Container(
+              height: 100,
+              width: double.infinity,
+              color: Colors.black54
+            ),
+          ),
+          const Center(
+            child: Text(
+              "Welcome...!",
+              style: TextStyle(fontSize: 80, color: Colors.white, fontFamily: 'Signatra'),
+            ),
+          )
         ],
       ),
     );
